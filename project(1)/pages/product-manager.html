@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="../style/product-manager.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/icons/re.png" alt="">
+                <div>
+                    <div class="brand">Study Tracker</div>
+                    <div class="sub-brand">Quản lý tiến độ học tập</div>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <div>
+                    <li class="menu-item"><span class="icon"><img src="../assets/icons/Trending up.png"
+                                alt=""></span>Thống kê</li>
+                    <li class="menu-item"><span class="icon"><img src="../assets/icons/Notebook.png" alt=""></span><a
+                            href="./category-manager.html">Quản lý môn học</a></li>
+                    <li class="menu-item hight"><span class="icon"><img src="../assets/icons/Document duplicate.png"
+                                alt=""></span><a href="./product-manager.html">Quản lý bài học</a></li>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle"><img src="../assets/icons/Icon button.png" alt=""></button>
+                </div>
+
+                <div class="header-right">
+                    <div class="user-box">
+                        <div class="user-info">
+                            <img class="name" src="../assets/icons/Icon button (1).png">
+                            <img class="name" src="../assets/icons/Icon button (2).png">
+                            <img class="name" src="../assets/icons/Icon button (3).png" alt="">
+                        </div>
+                        <div class="avatar" id="avatar">
+                            <img src="../assets/images/Avatar w. photo.png" alt="">
+
+                            <div class="logout-menu" style="display: none;" id="logoutMenu">
+                                <button id="logoutBtn">Đăng xuất</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main">
+                <div class="main-header">
+                    <h2>Bài học</h2>
+
+                    <div class="actions">
+                        <select>
+                            <option>Lọc theo môn học</option>
+                        </select>
+                        <button class="btn" id="btnAdd">Thêm mới</button>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Tên bài học <span><img src="../assets/icons/arrow-down.png" alt=""></span></th>
+                            <th>Thời gian <span><img src="../assets/icons/arrow-down.png" alt=""></span></th>
+                            <th>Trạng thái</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+                        <!-- <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Session 01 - HTML</td>
+                            <td>45</td>
+                            <td><span class="status done">● Đã hoàn thành</span></td>
+                            <td>
+                                <button class="btn-icon"><img src="../assets/icons/Button.png" alt=""></button>
+                                <button class="btn-icon"><img src="../assets/icons/Button (1).png" alt=""></button>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+
+            </main>
+        </div>
+    </div>
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Modal thêm -->
+    <div id="modal-add" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm mới môn học</h3>
+                <span class="close" id="closeIcon">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <label>Tên môn học</label>
+                <input type="text" id="nameSubject" style="margin-bottom: 10px;" placeholder="Session 10 - Cấu trúc điều khiển">
+                <span id="error-name" style="color: red;"></span><br>
+                <label>Thời lượng</label>
+                <input type="number" id="numberSubject" style="margin-bottom: 10px;" placeholder="45">
+                <span id="error-number" style="color: red;"></span><br>
+            </div>
+            
+
+            <div class="modal-body">
+                <label>Trạng thái</label>
+                <div class="radio-group" id="status">
+                    <label class="radio-container">
+                        <input type="radio" name="status-add" value="active" checked>
+                        Đang hoạt động
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="status-add" value="inactive">
+                        Ngừng hoạt động
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn-cancel" id="closeCancel">Hủy</button>
+            <button class="btn-submit" id="btnAddLesson">Thêm</button>
+        </div>
+    </div>
+
+    <!-- Modal sửa -->
+    <div id="modal-edit" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cập nhật môn học</h3>
+                <span class="close-edit" id="iconEdit">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <label>Tên môn học</label>
+                <input id="edit-name" type="text">
+            </div>
+            <span id="error-name-edit" style="color: red;"></span>
+
+            <div class="modal-body">
+                <label>Trạng thái</label>
+                <div class="radio-group">
+                    <label class="radio-container">
+                        <input type="radio" name="status-edit" value="active" checked>
+                        Đang hoạt động
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="status-edit" value="inactive">
+                        Ngừng hoạt động
+                    </label>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-cancel-edit" id="btnCancelEdit">Hủy</button>
+                <button class="btn-submit" id="btnSave">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- xóa -->
+    <div id="modal-delete" class="modal">
+        <div class="modal-content" style="text-align:center">
+            <div class="modal-header">
+                <img src="../assets/icons/Featured icon.png" alt="">
+            </div>
+
+            <div class="modal-body">
+                <h3>Xác nhận</h3>
+                <p>Bạn có chắc muốn xoá bài học <b>Lập trình cơ bản Frontend Fundamental</b> Khỏi hệ thống
+                    không
+                </p>
+            </div>
+            <hr>
+            <div class="modal-footer">
+                <button class="btn-cancel-delete" id="closeCancelDelete">Hủy</button>
+                <button class="btn-delete" id="btnDelete">Xoá</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal xác nhận đăng xuất -->
+    <div class="modal modal-logout">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Xác nhận đăng xuất</h3>
+                <span class="close-logout">&times;</span>
+            </div>
+
+            <div class="modal-body modal-logout-body">
+                <p>Bạn có chắc muốn đăng xuất không?</p>
+            </div>
+
+            <div class="modal-footer modal-logout-footer">
+                <button class="btn-cancel logout-cancel">Hủy</button>
+                <button class="btn-delete logout-confirm">Đăng xuất</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/product-manager.js"></script>
+</body>
+
+</html>

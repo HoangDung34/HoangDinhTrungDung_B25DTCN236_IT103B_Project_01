@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../style/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Đăng nhập</h1>
+        <p class="subtitle">Đăng nhập tài khoản để sử dụng hệ thống quản lý.</p>
+
+        <form id="login-form">
+            <label>Email</label>
+            <input type="text" id="email" placeholder="" autocomplete="off">
+            <span id="errorEmail" class="warning"></span><br>
+
+            <label>Mật khẩu</label>
+            <input type="password" id="password" placeholder="" autocomplete="new-password">
+            <span id="errorPassword" class="warning"></span>
+
+            <div class="options">
+                <label class="remember">
+                    <input type="checkbox" id="checkbox" checked> Nhớ tài khoản
+                </label>
+                <a href="#" class="forgot">Quên mật khẩu?</a>
+            </div>
+            <p class="warning-text" id="errorCheckbox"></p>
+
+            <button type="submit" id="btn-regis">Đăng nhập</button>
+        </form>
+
+        <p class="register">
+            Bạn chưa có tài khoản? <a href="./login.html">Đăng ký</a>
+        </p>
+    </div>
+    <script src="../js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

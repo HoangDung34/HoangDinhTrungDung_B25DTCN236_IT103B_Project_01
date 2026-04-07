@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8FAFC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family:'Inter', sans-serif;
+}
+
+.login-container {
+    width: 400px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #525257;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #3366ff;
+}
+
+.warning{
+    margin-top: 10px;
+    color: red;
+}
+
+.warning-text{
+    margin-bottom: 20px;
+    color: red;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 20px;
+}
+
+.remember {
+    font-size: 14px;
+    color: #94A3B8;
+}
+
+.forgot {
+    font-size: 14px;
+    color: #2563EB;
+    text-decoration: none;
+}
+
+button {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #254eda;
+}
+
+.register {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register a {
+    color: #3366ff;
+    text-decoration: none;
+}

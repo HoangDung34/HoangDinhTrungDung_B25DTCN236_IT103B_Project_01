@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="../style/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Đăng ký tài khoản</h1>
+        <p class="sub">Đăng ký tài khoản để sử dụng dịch vụ</p>
+
+        <div class="row">
+            <div class="col">
+                <label for="name">Họ và tên đệm</label>
+                <input type="text" id="name">
+                <span id="errName" class="text-color"></span>
+            </div>
+            <div class="col">
+                <label for="main-name">Tên</label>
+                <input type="text" id="main-name">
+                <span id="errMainName" class="text-color"></span>
+            </div>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="text" placeholder="you@company.com" id="email" autocomplete="off">
+        <span id="errEmail" class="text-color"></span><br>
+
+        <label>Mật khẩu</label>
+        <input type="password" id="password" autocomplete="new-password">
+        <span id="errPassWord" class="text-color" ></span><br>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="checkbox">
+                <span>Bạn đồng ý với <a href="#">chính sách và điều khoản</a></span>
+            </label>
+        </div>
+        <p class="text-color" id="errCheckbox"></p>
+
+        <button id="btn-log">Đăng ký</button>
+
+        <p class="login">
+            Bạn đã có tài khoản? <a href="./register.html">Đăng nhập</a>
+        </p>
+    </div>
+
+    <script src="../js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
