@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý khóa học</title>
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="search-bar">
+                <i class="fa fa-search"></i>
+                <img src="../assets/icons/Search.png" alt=""><input type="text" placeholder="Tìm kiếm">
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="active">Trang chủ</a>
+                <a href="#">Môn học</a>
+                <a href="#">Bài học</a>
+                <img src="../assets/icons/Favorites.png" alt="">
+            </nav>
+
+            <div class="user-box">
+                <img src="../assets/icons/User.png" alt="" class="avatar" id="avatar">
+
+                <div class="log-out hidden" id="logoutMenu">
+                    <button id="logoutBtn">Đăng xuất</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="status-menu">
+        <a href="#" class="active">Tất cả môn học</a>
+        <a href="#">Đã hoàn thành</a>
+        <a href="#">Chưa hoàn thành</a>
+    </div>
+
+    <main class="course-grid">
+        <div class="course-card">
+            <h3>HTML cơ bản</h3>
+            <ul>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 01: Tổng quan về HTML</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 02: Thẻ Inline và Block</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 03: Thẻ hình ảnh</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 04: Thẻ chuyển trang</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 05: Thẻ Semantic</li>
+            </ul>
+            <a href="#" class="see-more">Xem thêm</a>
+        </div>
+
+        <div class="course-card">
+            <h3>CSS cơ bản</h3>
+            <ul>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 01: Tổng quan về CSS</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 02: Nhúng CSS vào trang Web</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 03: Position</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 04: Flexbox</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 05: Animation</li>
+            </ul>
+            <a href="#" class="see-more">Xem thêm</a>
+        </div>
+
+        <div class="course-card">
+            <h3>JavaScript cơ bản</h3>
+            <ul>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 01: Tổng quan ngôn ngữ JavaScript
+                </li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 02: Khai báo biến</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 03: Câu lệnh điều kiện</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 04: Vòng lặp</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 05: Mảng</li>
+            </ul>
+            <a href="#" class="see-more">Xem thêm</a>
+        </div>
+
+        <div class="course-card">
+            <h3>Lập trình với React.js</h3>
+            <ul>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 01: Tổng quan về React.js</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 02: Props, State, Event</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 03: React hook</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 04: React Router</li>
+            </ul>
+            <a href="#" class="see-more">Xem thêm</a>
+        </div>
+
+        <div class="course-card">
+            <h3>Lập trình với Java</h3>
+            <ul>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 01: Tổng quan về ngôn ngữ Java</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 02: Khai báo biến</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 03: Câu lệnh điều kiện</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 04: Vòng lặp</li>
+                <li><i><img src="../assets/icons/circle-ok.png" alt=""></i> Session 05: Mảng</li>
+            </ul>
+            <a href="#" class="see-more">Xem thêm</a>
+        </div>
+
+        <div class="course-card empty-card">
+            <h3>Lập trình C</h3>
+            <div class="empty-card-body">
+                <p>Chưa có bài học nào</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>Chúng tôi cung cấp giải pháp học tập, giúp học sinh và
+                    <br>viên học tập tốt hơn và hiệu quả hơn.
+                </p>
+                <div class="social-icons">
+                    <i><img src="../assets/icons/Twitter.png" alt=""></i>
+                    <i><img src="../assets/icons/Vector.png" alt=""></i>
+                    <i><img src="../assets/icons/tito.png" alt=""></i>
+                    <i><img src="../assets/icons/Instagram.png" alt=""></i>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Danh mục</h4>
+                <a href="#">Môn học</a>
+                <a href="#">Bài học</a>
+                <a href="#">Ghi chú</a>
+            </div>
+            <div class="footer-links">
+                <h4>Hỗ trợ khách hàng</h4>
+                <a href="#">Tìm kiếm dịch vụ</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Chính sách và điều khoản</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

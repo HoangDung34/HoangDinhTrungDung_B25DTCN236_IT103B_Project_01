@@ -1,0 +1,524 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #F6F8F9;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.brand {
+    display: block;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+.sub-brand {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu-item {
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    color: #252C32;
+    transition: 0.2s;
+}
+
+.menu-item.hight {
+    width: 100%;
+    background-color: #D7EDFF;
+    border: 1px solid none;
+    color: #0E73F6;
+}
+
+.menu-item.hight img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(3000%) hue-rotate(200deg) brightness(95%) contrast(95%);
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-item:hover {
+    background-color: #D7EDFF;
+    color: #0E73F6;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 260px;
+}
+
+.header {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-info {
+    text-align: right;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.avatar {
+    position: relative;
+    cursor: pointer;
+}
+
+.logout-menu {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    top: 50px;
+    right: 0;
+    background: blue;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logout-menu button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    width: 100%;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.content {
+    padding: 30px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* margin-bottom: 5px; */
+}
+
+.content-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.content-title {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.content-selection {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #666;
+    margin-right: 10px;
+}
+
+.add-content {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.st-search-bar {
+    position: relative;
+    margin-bottom: 25px;
+    max-width: 350px;
+    margin-left: auto;
+    /* Đẩy sang phải theo ảnh */
+    margin-right: 30px;
+}
+
+.btn-find {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.st-table {
+    width: 95%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    margin-left: 30px;
+}
+
+.st-table thead {
+    background-color: #EAECF0;
+}
+
+.st-table th {
+    text-align: left;
+    padding: 15px;
+    color: #888;
+    font-size: 13px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.st-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+}
+
+.st-status {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.st-active-status {
+    background: #e6f7ee;
+    color: #22c55e;
+}
+
+.st-inactive-status {
+    background: #fff1f1;
+    color: #ef4444;
+}
+
+.st-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.st-icon-del {
+    color: #ef4444;
+    cursor: pointer;
+}
+
+.st-icon-edit {
+    color: #f97316;
+    cursor: pointer;
+}
+
+/* .st-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 8px;
+}
+
+.st-pag-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #eee;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.st-button-number {
+    background: #ffffff;
+    color:black;
+} */
+
+.st-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.st-pag-btn {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.st-pag-btn:hover {
+    background: #f1f5f9;
+}
+
+.st-button-number {
+    display: flex;
+    gap: 8px;
+}
+
+.page-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.page-btn:hover {
+    background: #e2e8f0;
+}
+
+.page-btn.active {
+    background: #3b82f6;
+    color: #fff;
+    border-color: #3b82f6;
+    font-weight: 600;
+}
+
+.st-pag-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease;
+}
+
+#modal-delete .modal-body{
+    text-align: left;
+    margin-bottom: 10px;
+    line-height: 2;
+}
+
+.modal-content {
+    padding: 20px 20px;
+}
+
+#modal-add .modal-footer{
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header span {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.modal-body {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-body input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-submit {
+    padding: 8px 14px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-cancel,
+.btn-cancel-edit,
+.btn-cancel-delete {
+    padding: 8px 14px;
+    background: #f1f5f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    padding: 8px 14px;
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal.modal-logout{
+    width: 400px;
+    height: 200px;
+}
+
+.modal-logout-body {
+    text-align: center;
+    font-size: 15px;
+    color: #374151;
+    padding: 10px 0;
+}
+
+.modal-logout-footer {
+    justify-content: center;
+}
+
+.modal-logout .btn-delete {
+    background: #ef4444;
+    transition: 0.2s;
+}
+
+.modal-logout .btn-delete:hover {
+    background: #dc2626;
+}
+
+.modal-logout .btn-cancel:hover {
+    background: #e2e8f0;
+}
